@@ -3,7 +3,7 @@
 	--container-color: #38bdf8;
 	--subsection-color: #7dd3fc;
 	--main-font: 'Ubuntu', helvetica, sans-serif;
-	--main-radius: 8px;
+	--main-radius: 16px;
 }
 
 * {
@@ -36,6 +36,12 @@ body {
 	margin: 1rem;
 }
 
+div,
+header,
+footer {
+	border-radius: var(--main-radius);
+}
+
 .container {
 	border-radius: var(--main-radius);
 	display: grid;
@@ -44,28 +50,56 @@ body {
 		'sidebar cards cards'
 		'sidebar announce trend'
 		'footer footer footer';
+	grid-template-columns: 1fr 2fr 2fr;
+	gap: 0.5em;
 }
 
 .header {
 	grid-area: header;
+	grid-column: 2 / -1;
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	justify-items: space-between;
+	padding: 1em;
+}
+
+.header div {
+	display: flex;
+	justify-content: stretch;
+	align-items: center;
+	gap: 1em;
+}
+
+.header div:nth-of-type(2) {
+	gap: 2em;
+}
+
+.header div:nth-of-type(3) {
+	justify-self: end;
+	padding-right: 2em;
 }
 
 .sidebar {
 	grid-area: sidebar;
+	grid-column: 1 / 2;
 }
 
 .projects {
 	grid-area: cards;
+	grid-column: 2 / 4;
 }
 
 .announcements {
 	grid-area: announce;
+	grid-column: 2 / 3;
 }
 
 .trending {
 	grid-area: trend;
+	grid-column: 3 / 4;
 }
 
 .footer {
 	grid-area: footer;
+	grid-column: 1 / -1;
 }
