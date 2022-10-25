@@ -1,6 +1,7 @@
 :root {
-	--main-container-color: #262626;
-	--subsection-color: #404040;
+	--body-color: #0ea5e9;
+	--container-color: #38bdf8;
+	--subsection-color: #7dd3fc;
 	--main-font: 'Ubuntu', helvetica, sans-serif;
 	--main-radius: 8px;
 }
@@ -10,6 +11,7 @@
 	padding: 0;
 	list-style: none;
 	box-sizing: border-box;
+	font-family: var(--main-font);
 }
 
 .trending img {
@@ -27,4 +29,43 @@
 .title,
 .footer {
 	background-color: var(--subsection-color);
+}
+
+body {
+	background-color: var(--body-color);
+	margin: 1rem;
+}
+
+.container {
+	border-radius: var(--main-radius);
+	display: grid;
+	grid-template-areas:
+		'sidebar header header'
+		'sidebar cards cards'
+		'sidebar announce trend'
+		'footer footer footer';
+}
+
+.header {
+	grid-area: header;
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+.projects {
+	grid-area: cards;
+}
+
+.announcements {
+	grid-area: announce;
+}
+
+.trending {
+	grid-area: trend;
+}
+
+.footer {
+	grid-area: footer;
 }
