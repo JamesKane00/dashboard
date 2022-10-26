@@ -129,9 +129,61 @@ aside {
 	align-items: center;
 	gap: 1em;
 	font-size: 1.3em;
+	cursor: pointer;
+	position: relative;
+	padding-bottom: 0.4em;
 }
 
-.sidebar .sidebar-links li:hover {
+.sidebar .sidebar-nav .sidebar-links li,
+.sidebar .sidebar-nav .sidebar-links li:after,
+.sidebar .sidebar-nav .sidebar-links li:before {
+	transition: all 0.5s;
+}
+
+.sidebar .sidebar-nav .sidebar-links svg:before,
+.sidebar .sidebar-nav .sidebar-links svg:after {
+	color: orange;
+}
+
+.sidebar .sidebar-nav .sidebar-links li:after,
+.sidebar .sidebar-nav .sidebar-links li:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+	content: '.';
+	color: transparent;
+	background: rgb(215, 141, 4);
+	height: 2px;
+}
+.sidebar .sidebar-nav .sidebar-links li:hover:after {
+	width: 100%;
+}
+
+.sidebar .sidebar-nav .sidebar-links li {
+	transition: all 0.5s;
+}
+
+.sidebar .sidebar-nav .sidebar-links li:after {
+	text-align: left;
+	content: '.';
+	margin: 0;
+	opacity: 0;
+}
+
+.sidebar .sidebar-nav .sidebar-links li:hover {
+	color: orange;
+	z-index: 1;
+}
+
+.sidebar .sidebar-nav .sidebar-links li:hover:after {
+	z-index: -10;
+	animation: fill 1s forwards;
+	-webkit-animation: fill 0.5s forwards;
+	-moz-animation: fill 0.5s forwards;
+	opacity: 1;
 }
 
 .sidebar-links div:nth-of-type(1) {
@@ -208,7 +260,7 @@ aside {
 	border-bottom: 0.25em solid orange;
 }
 
-x .project-links h2 {
+.project-links h2 {
 	grid-column: 1 / -1;
 	place-self: center;
 	padding: 0.2em 0 0.5em;
