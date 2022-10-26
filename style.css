@@ -1,7 +1,6 @@
 :root {
-	--body-color: #0ea5e9;
-	--container-color: #38bdf8;
-	--subsection-color: #7dd3fc;
+	--subsection-color: #0369a1;
+	--body-color: #262626;
 	--main-font: 'Ubuntu', helvetica, sans-serif;
 	--main-radius: 18px;
 }
@@ -12,6 +11,19 @@
 	list-style: none;
 	box-sizing: border-box;
 	font-family: var(--main-font);
+}
+
+.header,
+.sidebar,
+.projects,
+.announcements,
+.trending {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+svg {
+	color: #171717;
 }
 
 .trending img {
@@ -32,8 +44,8 @@
 }
 
 body {
-	background-color: var(--container-color);
-	margin: 1rem;
+	background-color: var(--body-color);
+	margin: 0.5rem;
 }
 
 div,
@@ -54,7 +66,7 @@ aside {
 		'sidebar announce trend'
 		'footer footer footer';
 	grid-template-columns: 1fr 2fr 2fr;
-	gap: 0.5em;
+	gap: 0.4em;
 }
 
 .header {
@@ -138,6 +150,8 @@ aside {
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1em;
 	padding: 1em;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .projects div.title {
@@ -159,12 +173,13 @@ aside {
 }
 
 .projects div.project-links {
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 	display: grid;
 	grid-template-rows: 1fr 3fr 1fr;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 0.5em;
-	border-left: 0.3em solid var(--container-color);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	border-bottom: 0.5em solid var(--body-color);
 }
 
 .project-links h2 {
@@ -257,4 +272,9 @@ aside {
 .footer {
 	grid-area: footer;
 	grid-column: 1 / -1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	letter-spacing: 0.1em;
 }
