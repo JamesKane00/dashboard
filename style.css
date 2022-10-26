@@ -23,7 +23,7 @@
 }
 
 svg {
-	color: #171717;
+	color: white;
 }
 
 .trending img {
@@ -38,14 +38,23 @@ svg {
 .announcements,
 .trending,
 .event-dates,
-.title,
 .footer {
 	background-color: var(--subsection-color);
+	border-left: 0.25em solid white;
+}
+
+.header:hover,
+.sidebar:hover,
+.projects:hover,
+.announcements:hover,
+.trending:hover,
+.event-dates:hover,
+.footer:hover {
+	border-left: 0.25em solid rgb(215, 141, 4);
 }
 
 body {
 	background-color: var(--body-color);
-	margin: 0.5rem;
 }
 
 div,
@@ -66,7 +75,7 @@ aside {
 		'sidebar announce trend'
 		'footer footer footer';
 	grid-template-columns: 1fr 2fr 2fr;
-	gap: 0.4em;
+	gap: 0.5em;
 }
 
 .header {
@@ -84,7 +93,17 @@ aside {
 	gap: 1em;
 }
 
+.header div > input {
+	flex-basis: 350px;
+	border-radius: 1em;
+	outline: none;
+	appearance: none;
+	border: none;
+	padding: 0.15em 0 0.15em 0.5em;
+}
+
 .header div:nth-of-type(2) {
+	padding-left: 3em;
 	gap: 2em;
 }
 
@@ -108,8 +127,11 @@ aside {
 .sidebar .sidebar-links li {
 	display: flex;
 	align-items: center;
-	gap: 0.5em;
-	font-size: 1.2em;
+	gap: 1em;
+	font-size: 1.3em;
+}
+
+.sidebar .sidebar-links li:hover {
 }
 
 .sidebar-links div:nth-of-type(1) {
@@ -174,18 +196,22 @@ aside {
 
 .projects div.project-links {
 	display: grid;
-	grid-template-rows: 1fr 3fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 0.5em;
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
 		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-	border-bottom: 0.5em solid var(--body-color);
+	border-bottom: 0.25em solid white;
 }
 
-.project-links h2 {
+.projects .project-links:hover {
+	border-bottom: 0.25em solid orange;
+}
+
+x .project-links h2 {
 	grid-column: 1 / -1;
 	place-self: center;
-	padding: 0.2em 0 0.5em 0;
+	padding: 0.2em 0 0.5em;
 }
 
 .project-links p {
@@ -277,4 +303,5 @@ aside {
 	align-items: center;
 	padding: 1em;
 	letter-spacing: 0.1em;
+	border-right: 0.25em solid white;
 }
